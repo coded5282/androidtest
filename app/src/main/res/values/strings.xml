@@ -5,5 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="best_app">Best App Ever!</string>
+    <string name="string_practice">This String is practice</string>
+    <string name="second_practice">Second practice</string>
 
 </resources>
