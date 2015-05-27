@@ -43,6 +43,8 @@ public class FirstView extends View {
                 break;
 
             case MotionEvent.ACTION_MOVE: // finger dragged across screen
+                circleX = X;
+                circleY = Y;
                 break;
 
             case MotionEvent.ACTION_UP: // finger removed from screen
