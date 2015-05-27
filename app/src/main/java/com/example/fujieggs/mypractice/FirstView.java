@@ -8,6 +8,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class FirstView extends View {
@@ -30,4 +31,28 @@ public class FirstView extends View {
     protected void onDraw(Canvas canvas) {
         canvas.drawCircle(circleX, circleY, radius, redPaint);
     }
+
+    public boolean onTouchEvent(MotionEvent event) {
+        int eventaction = event.getAction(); // get integer associated with action of user
+        int X = (int)event.getX(); // get x coordinates of finger
+        int Y = (int)event.getY(); // get y coordinates of finger
+
+        switch (eventaction) { // handle 3 cases
+
+            case MotionEvent.ACTION_DOWN: // finger down on screen
+                break;
+
+            case MotionEvent.ACTION_MOVE: // finger dragged across screen
+                break;
+
+            case MotionEvent.ACTION_UP: // finger removed from screen
+                circleX = X;
+                circleY = Y;
+                break;
+        }
+        invalidate(); // Telling view change has occurred and canvas needs to be redrawn
+        return true;
+    }
+
+
 }
