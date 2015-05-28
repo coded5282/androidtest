@@ -1,6 +1,8 @@
 package com.example.fujieggs.mypractice;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,12 +12,18 @@ import android.view.View;
  */
 public class TitleView extends View {
 
+    private Bitmap titleGraphic;
+
     public TitleView(Context context) {
         super(context);
+        titleGraphic =
+                BitmapFactory.decodeResource(getResources(),
+                        R.drawable.ic_launcher);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        canvas.drawBitmap(titleGraphic, 0,0,null);
 
     }
 
