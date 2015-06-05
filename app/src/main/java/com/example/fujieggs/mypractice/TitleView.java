@@ -13,6 +13,8 @@ import android.view.View;
 public class TitleView extends View {
 
     private Bitmap titleGraphic;
+    private int screenW; // Variables to keep track of width and height of screen
+    private int screenH;
 
     public TitleView(Context context) {
         super(context);
@@ -22,8 +24,19 @@ public class TitleView extends View {
     }
 
     @Override
+    public void onSizeChanged (int w, int h, int oldw, int oldh)
+    {
+        super.onSizeChanged(w, h, oldw, oldh);
+        screenW = w;
+        screenH = h;
+    } // Override onSizeChanged method to grab values of width and height
+    // of screen
+
+
+
+    @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawBitmap(titleGraphic, 0,0,null);
+        canvas.drawBitmap(titleGraphic, (screenW-titleGraphic.getWidth())/2,0,null);
 
     }
 
